@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int regNos[size];
+    printf("Enter %d registration numbers:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &regNos[i]);
+    }
+
+    int targetRegNo;
+    printf("Enter the registration number to search for: ");
+    scanf("%d", &targetRegNo);
+    int found = 0; // Flag to indicate if the reg no is found
+    for (int i = 0; i < size; i++) {
+        if (regNos[i] == targetRegNo) {
+            found = 1;
+            break; 
+        }
+    }
+
+    if (found) {
+        printf("Registration number %d found in the array.\n", targetRegNo);
+    } else {
+        printf("Registration number %d not found in the array.\n", targetRegNo);
+    }
+
+    return 0;
+}
